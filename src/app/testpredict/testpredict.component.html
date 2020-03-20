@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <button mat-button routerLink="/">Train a AI Model</button>
+
+    <button mat-button routerLink="/testpredict">Testprediction</button>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<div class="container">
+	<input type="file" (change)="onFileSelect($event.target)" name="myfile" *ngIf="!cam" accept="image/png, image/jpeg">
+	<img width="224" height="224" src="" id="imagetest" *ngIf="cam"/>
+	<button mat-button (click)="faitpredict()" *ngIf="cam">Predict</button>
+	<button mat-button (click)="restt()" *ngIf="cam">Reset</button>
+	<button mat-button (click)="getsexe()" *ngIf="personnevalide">Sexe</button>
+</div>
